@@ -40,7 +40,7 @@ runs:
         MODULE: ${{ inputs.module }}
       run: |
         git cliff --config cliff.toml --unreleased --tag "$NEW_VERSION" --include-path "$MODULE/**" | tee notes.md
-        echo "## $NEW_VERSION" >> notes.md
+        echo "## $NEW_VERSION" >> "$GITHUB_STEP_SUMMARY"
         cat notes.md >> "$GITHUB_STEP_SUMMARY"
       shell: bash
 
