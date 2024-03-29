@@ -44,6 +44,11 @@ func TestGetTypeOfChange(t *testing.T) {
 			commits:  []string{"feat: add something", "fix!: critical fix"},
 			expected: major,
 		},
+		{
+			name:     "Multiple commits, middle is breaking",
+			commits:  []string{"feat: add something", "fix!: critical fix", "chore: update dependencies"},
+			expected: major,
+		},
 	}
 
 	for _, tt := range tests {

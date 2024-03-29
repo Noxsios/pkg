@@ -32,7 +32,8 @@ runs:
         NEW_VERSION: ${{ steps.bump-version.outputs.new-version }}
         MODULE: ${{ inputs.module }}
       run: |
-        git cliff --config cliff.toml --unreleased --tag "$TAG" --include-path "$MODULE/**" | tee notes.md
+        git cliff --config cliff.toml --unreleased --tag "$NEW_VERSION" --include-path "$MODULE/**" | tee notes.md
+        cat notes.md >> "$GITHUB_STEP_SUMMARY"
       shell: bash
 
     - name: upload release notes
