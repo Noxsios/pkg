@@ -5,6 +5,11 @@ inputs:
     description: "The module to be released"
     required: true
 
+outputs:
+  new-version:
+    description: "The new version of the module"
+    value: ${{ steps.bump-version.outputs.new-version }}
+
 runs:
   using: composite
   steps:

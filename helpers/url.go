@@ -110,5 +110,5 @@ func GetAvailablePort() (int, error) {
 
 // DoNothing is a placeholder function
 func DoNothing() {
-	fmt.Println("This is a placeholder function")
+	fmt.Println("This is a placeholder functio")
 }
