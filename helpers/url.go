@@ -15,11 +15,9 @@ import (
 
 // Nonstandard URL schemes or prefixes
 const (
-	OCIURLPrefix = "oci://"
-
+	OCIURLPrefix  = "oci://"
 	SGETURLPrefix = "sget://"
 	SGETURLScheme = "sget"
-
 	IPV4Localhost = "127.0.0.1"
 )
 
