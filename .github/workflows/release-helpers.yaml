@@ -44,6 +44,11 @@ jobs:
           name: release-notes
           path: notes.md
 
+      - env:
+          NEW_VERSION: ${{ needs.bump-version-and-release-notes.outputs.new-version }}
+        run: |
+          echo "\n\n---\n\n> new version is: $NEW_VERSION" >> "$GITHUB_STEP_SUMMARY"
+
       - name: Get pkg app token
         id: pkg-app-token
         uses: actions/create-github-app-token@78e5f2ddc08efcb88fbbee6cfa3fed770ba550c3 # v1.9.1
